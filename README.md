@@ -1,24 +1,18 @@
-# README
+## AI Agent Integration Architecture
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails API integrates with a Python-based AI agent that uses Chroma and OpenAI to answer user questions based on The Strategy Files newsletter.
 
-Things you may want to cover:
+### Why We Use a Microservice Approach
 
-* Ruby version
+To get a better idea of why I'm using microservices for this project, here is a great article on the topic from 2014: The Clean Code Blog by Robert C. Martin
+[Clean Microservice Architecture by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2014/10/01/CleanMicroserviceArchitecture.html)
 
-* System dependencies
+The AI logic will be a microservice (maybe I'll use FastAPI) Here’s some benifits:
 
-* Configuration
+- **Separation of Concerns**: Python handles AI tasks; Rails handles application logic and data storage.
+- **Testability**: Rails tests mock the AI service, keeping specs fast and clean. Python logic is unit-tested separately.
+- **Scalability**: The AI service can be independently deployed, scaled, and monitored.
+- **Maintainability**: Isolating the AI logic makes it easier to upgrade or swap AI components in the future.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### To Do:
+The Rails controller sends a POST request to the AI microservice, receives the generated answer, and handles any needed persistence or user tracking.
