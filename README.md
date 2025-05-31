@@ -32,6 +32,9 @@ AI_AGENT_URL=http://localhost:8000/query
 
 Setup
 
+### Run the tests
+bundle exec rspec
+
 ### Run The API
 rails sserver -p 3001
 

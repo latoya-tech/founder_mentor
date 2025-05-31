@@ -1,10 +1,7 @@
-# app/controllers/api/questions_controller.rb
 module Api
   class QuestionsController < ApplicationController
     def ask
-      # Parse the request body manually if needed
-      request_body = JSON.parse(request.body.read) rescue {}
-      question = request_body['question']
+      question = params[:question]
 
       if question.present?
         answer = "This is a response to: #{question}"
