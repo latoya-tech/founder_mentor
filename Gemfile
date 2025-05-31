@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.2"
 
 # talk to React Client
-gem 'rack-cors'
+gem "rack-cors"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
@@ -39,9 +39,9 @@ gem "thruster", require: false
 # gem "rack-cors"
 
 group :development, :test do
-  gem 'pry'
-  gem 'pry-rails'  # Makes pry the default Rails console
-  gem 'rspec-rails' # add some controller tests
+  gem "pry"
+  gem "pry-rails"  # Makes pry the default Rails console
+  gem "rspec-rails" # add some controller tests
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 

@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   Rails.application.routes.draw do
     namespace :api do
-      post '/ask', to: 'questions#ask'
-      # Optional health check endpoint
-      get '/health', to: proc { [200, {}, ['OK']] }
+      post "/ask", to: "questions#ask"
     end
   end
 
