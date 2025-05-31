@@ -16,3 +16,45 @@ The AI logic will be a microservice (maybe I'll use FastAPI) Here’s some benif
 
 ### To Do:
 The Rails controller sends a POST request to the AI microservice, receives the generated answer, and handles any needed persistence or user tracking.
+
+### ⚙️  Environment Setup
+Prerequisites
+Ruby 3.x
+
+Rails 7.x
+
+PostgreSQL
+
+Python AI Agent (running separately — see below)
+
+.env (recommended)
+AI_AGENT_URL=http://localhost:8000/query
+
+Setup
+
+### Run The API
+rails sserver -p 3001
+
+### Run The Client
+npm start (should I switch to yarn?)
+
+### 🤖 AI Agent Microservice
+The AI agent is a separate Python microservice using:
+
+FastAPI (or Flask)
+
+ChromaDB for vector search
+
+OpenAI API for response generation
+
+For details, see the AI Agent README.
+
+### ToDo: 📦 Deployment
+Deploy the Rails API and the Python AI agent as separate services (e.g., with Docker, Render, Fly.io, or Heroku + a Python host). Ensure both can communicate over a secure internal or public endpoint.
+
+📜 License
+This project is licensed under the MIT License
+
+### Maintainers
+It's all me!
+For questions, please contact [latoya@thestrategyfiles.com].
